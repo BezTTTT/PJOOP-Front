@@ -6,7 +6,7 @@ export default class Canvas extends React.Component {
     super(props);
     this.state = {
       hexSize: 20,
-      hexOrigin: { x: 300, y: 300 },
+      hexOrigin: { x: 400, y: 300 },
     };
   }
   componentWillMount() {
@@ -34,30 +34,85 @@ export default class Canvas extends React.Component {
       );
     }
   }
+
   drawHexes() {
     const { canvasWidth, canvasHeight } = this.state.canvasSize;
-    const { hexWidth, hexHeight, vertDist, horizDist } =
-      this.state.Hexparameteres;
+    const { hexWidth, hexHeight, vertDist, horizDist } =this.state.Hexparameteres;
     const hexOrigin = this.state.hexOrigin;
-    let qLeftSide = Math.round(hexOrigin.x / hexWidth) * 4;
-    let qRightSide = (Math.round(canvasWidth - hexOrigin.x) / hexWidth) * 2;
-    let rTopside = Math.round(hexOrigin.y / (hexHeight / 2));
-    let rBottomside = Math.round(canvasHeight - hexOrigin.y) / (hexHeight / 2);
-    for (let r = -rTopside; r <= rBottomside; r++) {
-      for (let q = -qLeftSide; q <= qRightSide; q++) {
-        let center = this.hexToPixel(this.Hex(q, r));
-        if (
-          center.x > hexWidth / 2 &&
-          center.x < canvasWidth - hexWidth / 2 &&
-          center.y > hexHeight / 2 &&
-          center.y < canvasHeight - hexHeight
-        ) {
-          this.drawHex(this.canvasHex, center);
-          this.drawHexCoordinates(this.canvasHex, center, this.Hex(q, r));
-        }
+    let qLeftSide = Math.round(hexOrigin.x / horizDist) * 4;
+    let qRightSide = Math.round(canvasWidth - hexOrigin.x) / horizDist;
+    let rTopside = Math.round(hexOrigin.y / vertDist);
+    let rBottomside = Math.round(canvasHeight - hexOrigin.y) / vertDist;
+    console.log(qLeftSide,qRightSide,rTopside,rBottomside)
+
+    var p=0;
+    for (let r = 0; r <= rBottomside; r++) {
+      if(r%2==0 && r!==0){
+        p++;
+      }
+        for (let q = -qLeftSide; q <= qRightSide; q++) {
+          const{x,y} = this.hexToPixel(this.Hex(q-p, r)); 
+          if (
+                    x > hexWidth / 2 &&
+                    x < canvasWidth - hexWidth / 2 &&
+                    y > hexHeight / 2 &&
+                    y < canvasHeight - hexHeight
+             ){
+              this.drawHex(this.canvasHex, this.Point(x,y));
+              this.drawHexCoordinates(this.canvasHex,  this.Point(x,y), this.Hex(q-p, r));
+             }
+        
+        
+     
+      }
+    }
+
+  var n=0;
+    for (let r = -1; r >= -rTopside; r--) {
+  if(r%2!==0){
+    n++;
+  }
+        for (let q = -qLeftSide; q <= qRightSide; q++) {
+         const{x,y} = this.hexToPixel(this.Hex(q+n, r)); 
+         if (
+          x > hexWidth / 2 &&
+          x < canvasWidth - hexWidth / 2 &&
+          y > hexHeight / 2 &&
+          y < canvasHeight - hexHeight
+   ){
+    this.drawHex(this.canvasHex, this.Point(x,y));
+    this.drawHexCoordinates(this.canvasHex,  this.Point(x,y), this.Hex(q+n, r));
+   }
+        
       }
     }
   }
+  // drawHexes() {
+  //   const { canvasWidth, canvasHeight } = this.state.canvasSize;
+  //   const { hexWidth, hexHeight, vertDist, horizDist } =
+  //     this.state.Hexparameteres;
+  //   const hexOrigin = this.state.hexOrigin;
+  //   let qLeftSide = Math.round(hexOrigin.x / hexWidth) * 4;
+  //   let qRightSide = (Math.round(canvasWidth - hexOrigin.x) / hexWidth) * 2;
+  //   let rTopside = Math.round(hexOrigin.y / (hexHeight / 2));
+  //   let rBottomside = Math.round(canvasHeight - hexOrigin.y) / (hexHeight / 2);
+  //   for (let r = -rTopside; r <= rBottomside; r++) {
+  //     for (let q = -qLeftSide; q <= qRightSide; q++) {
+  //       let center = this.hexToPixel(this.Hex(q, r));
+  //       if (
+  //         center.x > hexWidth / 2 &&
+  //         center.x < canvasWidth - hexWidth / 2 &&
+  //         center.y > hexHeight / 2 &&
+  //         center.y < canvasHeight - hexHeight
+  //       ) {
+  //         this.drawHex(this.canvasHex, center);
+  //         this.drawHexCoordinates(this.canvasHex, center, this.Hex(q, r));
+  //       }
+  //     }
+  //   }
+  // }
+
+
   getHexparameteres() {
     let hexHeight = this.state.hexSize * 2;
     let hexWidth = (Math.sqrt(3) / 2) * hexHeight;
