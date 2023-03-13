@@ -4,7 +4,7 @@ import Canvas from "./Canvas";
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div class="centered">
         <Canvas />
       </div>
     );

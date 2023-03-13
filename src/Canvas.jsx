@@ -177,7 +177,7 @@ export default class Canvas extends React.Component {
     ctx.fillText(h.r, center.x + 10, center.y);
    
   }
-
+handle
   getHexCornerCo(center, i) {
     let angle_deg = 60 * i + 30;
     let angle_rad = (Math.PI / 180) * angle_deg;
