@@ -1,7 +1,22 @@
 .bg {
-  background-image: url(Bgimg.png);
+  position: relative; /* set position to relative to make ::before absolute position to the parent */
+}
+
+.bg::before {
+  content: ""; /* required for the pseudo-element to appear */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+}
+
+/* your existing background styles */
+.bg {
+  background-image: url(di.png);
   height: 100vh;
-  background-size: cover;
+  background-size: 100% 155%;
   margin: 0;
   background-position: center;
   background-repeat: no-repeat;

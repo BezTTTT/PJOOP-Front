@@ -2,10 +2,11 @@ import "./styles.css";
 export const StartMenu = ({ onStartClick }) => {
   return (
     <div class="bg">
-      <div>
+      <div class="content">
         <button onClick={onStartClick}>Start Game</button>
       </div>
     </div>
+    
   );
 };
 
