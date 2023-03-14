@@ -1,0 +1,21 @@
+.submitButton {
+  border: none;
+  outline: 5px;
+  padding: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgb(185, 187, 185);
+  box-shadow: 0px 0px 3px black;
+  color: white;
+  outline-offset: 5px;
+  -webkit-text-stroke: 1px black;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 15px;
+}
+.Submit {
+}
+textArea {
+  width: 450px;
+  height: 200px;
+}

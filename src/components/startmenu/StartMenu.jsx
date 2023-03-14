@@ -1,12 +1,16 @@
 import "./styles.css";
 export const StartMenu = ({ onStartClick }) => {
   return (
-    <div class="bg">
-      <div class="content">
-        <button onClick={onStartClick}>Start Game</button>
+    <div className="bg">
+      <div className="topicHeight">
+        <h1 className="upbeat">UP BEAT</h1>
+      </div>
+      <div className="content">
+        <button className="startButton" onClick={onStartClick}>
+          START
+        </button>
       </div>
     </div>
-    
   );
 };
 
