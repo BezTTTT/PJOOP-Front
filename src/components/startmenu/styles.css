@@ -1,0 +1,8 @@
+.bg {
+  background-image: url(Bgimg.png);
+  height: 100vh;
+  background-size: cover;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}

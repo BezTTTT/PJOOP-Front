@@ -1,0 +1,15 @@
+body {
+  background: #ece7e7;
+}
+canvas {
+  border: 3px solid black;
+  position: absolute;
+  left: 500px;
+  right: auto;
+}
+.centered {
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
