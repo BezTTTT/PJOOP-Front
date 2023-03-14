@@ -6,7 +6,7 @@ export default class Canvas extends React.Component {
     super(props);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.state = {
-      hexSize: 20,
+      hexSize: 30,
       hexOrigin: { x: 400, y: 300 },
     };
   }
