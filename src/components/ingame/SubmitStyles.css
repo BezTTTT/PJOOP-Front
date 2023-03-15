@@ -16,6 +16,25 @@
 .Submit {
 }
 textArea {
-  width: 450px;
+  width: 500px;
   height: 200px;
+}
+
+
+.grid-container {
+  
+  display: grid;
+  grid-template-columns:800px 100px;
+  grid-gap: 10px;
+
+}
+
+
+.rower
+
+{  
+  
+  display: grid;
+  grid-template-rows:210px ;
+  transform: translateY(180px);
 }
