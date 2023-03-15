@@ -20,11 +20,14 @@ textArea {
   height: 200px;
 }
 
+.center{
+  transform: translate(10px, 50px);
+}
 
 .grid-container {
   
   display: grid;
-  grid-template-columns:800px 100px;
+  grid-template-columns:120px 820px 100px;
   grid-gap: 10px;
 
 }
@@ -37,4 +40,11 @@ textArea {
   display: grid;
   grid-template-rows:210px ;
   transform: translateY(180px);
+}
+
+.leftrower
+{
+  display: grid;
+  grid-template-rows:210px 210px;
+  transform: translateY(20px);
 }
