@@ -5,46 +5,37 @@
   font-size: 25px;
   cursor: pointer;
   border-radius: 20px;
-  background-color: rgb(185, 187, 185);
+  background-color: rgb(194, 247, 194);
   box-shadow: 0px 0px 3px black;
   color: white;
   outline-offset: 5px;
   -webkit-text-stroke: 1px black;
   font-family: "Times New Roman", Times, serif;
-  margin-left: 15px;
-}
-.Submit {
+  height: 50px;
 }
 textArea {
   width: 500px;
   height: 200px;
 }
 
-.center{
+.center {
   transform: translate(10px, 50px);
 }
 
 .grid-container {
-  
   display: grid;
-  grid-template-columns:120px 820px 100px;
+  grid-template-columns: 120px 820px 100px;
   grid-gap: 10px;
-
 }
 
-
-.rower
-
-{  
-  
+.rower {
   display: grid;
-  grid-template-rows:210px ;
+  grid-template-rows: 210px;
   transform: translateY(180px);
 }
 
-.leftrower
-{
+.leftrower {
   display: grid;
-  grid-template-rows:210px 210px;
+  grid-template-rows: 210px 210px;
   transform: translateY(20px);
 }
