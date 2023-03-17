@@ -1,17 +1,20 @@
 import Canvas from "../Canvas";
 import React from "react";
 import "./SubmitStyles.css";
+import Timer from "./Timer";
 
 function PlayMenu() {
   return (
     <div className="center">
       <div className="grid-container">
         <div className="leftrower">
-          <div>TIMER</div>
+          <div>
+            Timer : <Timer />
+          </div>
           <div className="block">
-            <label>Player1</label>
+            <button>Player1</button>
             <div className="block">
-              <label>Player2</label>
+              <button>Player2</button>
             </div>
           </div>
           <div className="block">
