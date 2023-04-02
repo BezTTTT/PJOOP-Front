@@ -23,7 +23,7 @@ function PlayMenu() {
         </div>
 
         <div>
-          <h1>Round xx</h1>
+          <h1>Round </h1>
           <Canvas />
         </div>
         <div className="rower">
