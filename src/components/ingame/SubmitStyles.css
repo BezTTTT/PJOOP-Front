@@ -22,6 +22,20 @@ textArea {
   transform: translate(10px, 50px);
 }
 
+.gridROWROUND{
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-gap: 10px;
+
+}
+
+.roundHeading {
+
+  margin-top: 20px;
+  margin-left: 440px;
+}
+
+
 .grid-container {
   display: grid;
   grid-template-columns: 120px 820px 100px;
