@@ -25,7 +25,7 @@ function PlayMenu() {
           </div>
 
         <div>
-          <h1>Round </h1>
+         
           <Canvas />
         </div>
         <div className="rower">
@@ -33,6 +33,7 @@ function PlayMenu() {
           <button className="submitButton">plan and start</button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
